@@ -8,11 +8,16 @@ Real-time Inventory Updates: Instantly reflect changes in product quantity and p
 
 Search and Filter: Easily search and filter items based on product name or category.
 
+Export as PDF: Generate professional PDF reports of current stock details with one click.
+
+Email Integration: Send stock reports directly via email to store managers or suppliers.
+
 RESTful APIs: Backend powered by Express.js provides secure and structured APIs for inventory operations.
 
 MongoDB Integration: Robust data storage and retrieval using a flexible schema with Mongoose ODM.
 
 Responsive UI: User-friendly front-end built with HTML, CSS, and optionally templating engines like EJS or frontend frameworks.
+
 
 Technology Stack:
 Backend: Node.js with Express.js
@@ -20,6 +25,10 @@ Backend: Node.js with Express.js
 Database: MongoDB (via Mongoose)
 
 Frontend: HTML, CSS, JavaScript, EJS (or any frontend framework)
+
+PDF Generation: pdfkit or html-pdf Node libraries
+
+Email Service: Integrated using nodemailer
 
 Optional Features: User authentication, barcode scanning, PDF reporting, and stock alerts
 
