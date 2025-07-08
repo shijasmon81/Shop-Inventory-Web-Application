@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/items" method="POST">
+    <input name="product" placeholder="Product" required />
+    <input name="price" type="number" placeholder="Price" required />
+    <input name="quantity" type="number" placeholder="Quantity" required />
+    <!-- <input name="unit" type="dropdown" placeholder="Unit" required /> -->
+    <select name="unit" required>Unit
+      <option value="kg">kg</option>
+      <option value="g">g</option>
+      <option value="litre">litre</option>
+      <option value="ml">ml</option>
+      <option value="pcs">pcs</option>
+    </select>
+    <button type="submit">Add</button>
+
+  </form>
+</body>
+</html>

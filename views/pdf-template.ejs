@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Stock Report</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      font-size: 12px;
+      color: #333;
+    }
+    .header, .footer {
+      text-align: center;
+    }
+    .header h1 {
+      margin-bottom: 0;
+    }
+    .header p {
+      margin-top: 5px;
+      font-size: 10px;
+    }
+    .footer {
+      position: fixed;
+      bottom: 30px;
+      width: 100%;
+      font-size: 10px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 30px;
+    }
+    th, td {
+      border: 1px solid #999;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #f0f0f0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>s mart</h1>
+    <p>123 Business St., City, Country | www.yourcompany.com | +91-1234567890</p>
+    <hr>
+    <p><strong>Stock Report</strong> – Generated on <%= date %></p>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Price (Rs.)</th>
+        <th>Quantity</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% items.forEach(item => { %>
+        <tr>
+          <td><%= item.product %></td>
+          <td><%= item.price %>/<%= item.unit %></td>
+          <td><%= item.quantity %>.<%= item.unit %></td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+
+  <div class="footer">
+    <hr>
+    <p>© <%= new Date().getFullYear() %> Your Company Name. All rights reserved.</p>
+  </div>
+
+</body>
+</html>

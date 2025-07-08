@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head><title>Edit Item</title></head>
+<body>
+  <h1>Edit Item</h1>
+  <form action="/items/<%= item._id %>?_method=PUT" method="POST">
+    <input name="product" value="<%= item.product %>" required />
+    <input name="price" type="number" value="<%= item.price %>" required />
+    <input name="quantity" type="number" value="<%= item.quantity %>" required />
+    <select name="unit" required>
+      <option value="kg" <%= item.unit === 'kg' ? 'selected' : '' %>>kg</option>
+      <option value="g" <%= item.unit === 'g' ? 'selected' : '' %>>g</option>
+      <option value="litre" <%= item.unit === 'litre' ? 'selected' : '' %>>litre</option>
+      <option value="ml" <%= item.unit === 'ml' ? 'selected' : '' %>>ml</option>
+      <option value="pcs" <%= item.unit === 'pcs' ? 'selected' : '' %>>pcs</option>       
+    </select>
+    <button type="submit">Update</button>
+  </form>
+  <form action="/items/<%= item._id %>?_method=DELETE" method="POST" style="display:inline;"><button type="submit">Delete</button></form>
+  <br>
+  <a href="/index" style="font: inherit;"><button type="submit" style="display: inline;" >Back</button></a>
+</body>
+</html>

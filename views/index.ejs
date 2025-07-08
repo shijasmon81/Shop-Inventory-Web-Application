@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head><title>CRUD App</title>
+<!-- <style>
+table, th, td {
+  border: .5px solid;
+  border-collapse: collapse;
+}
+th, td {
+          padding: 8px;
+          text-align: left;
+}
+</style> -->
+<link rel="stylesheet" href="/style/index.css">
+</head>
+<body>
+  <h1>Stock Details On <%= date %></h1>
+  <table style="width:35%">
+    <tr>
+      <th>Product</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Update</th>
+    </tr>
+    <ul>
+    <% items.forEach(item => { %>
+    <tr>
+      <td><%= item.product %> </td>
+      <td>Rs.<%= item.price %>/<%= item.unit %></td>
+      <td><%= item.quantity %>.<%= item.unit %></td>
+      <td><form action="/items/<%= item._id %>/edit" method="GET" style="display:inline;"><button type="submit">Update</button></form></td>
+      </td>
+      </tr>
+    <% }) %>
+    </ul>
+  </table>
+  <h3>Email Stock Report</h3>
+  <form action="/email-pdf" method="POST">
+    <input type="email" name="recipientEmail" placeholder="Enter recipient email" required />
+    <button type="submit">Send PDF</button>
+  </form>
+<br>
+  <a href="/download-pdf" target="_blank">
+  <button type="button">Download as PDF</button></a>
+  <a href="/"style="font: inherit;" ><button type="submit">Back</button></a>
+</body>
+</html>
+<script>
+  // Optional: Add any client-side JavaScript here

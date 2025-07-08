@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, th, td {
+          border: .5px solid;
+          border-collapse: collapse;
+        }
+        th, td {
+          padding: 8px;
+          text-align: left;
+        }
+</style>
+</head>
+<body>
+    <section>
+        <h1> Search result </h1>
+    <% if (item.length > 0) { %>
+    <table style="width:35%">
+    <tr>
+      <th>Product</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Update</th>
+    </tr>
+       <% item.forEach(item => { %>
+       <tr>
+           <td><%= item.product %> </td>
+           <td>Rs.<%= item.price %>/<%= item.unit %></td>
+           <td><%= item.quantity %>.<%= item.unit %></td>
+           <td><form action="/items/<%= item._id %>/edit" method="GET" style="display:inline;"><button type="submit">Edit</button></form> &nbsp;OR&nbsp;
+           <form action="/items/<%= item._id %>?_method=DELETE" method="POST" style="display:inline;"><button type="submit">Delete</button></form></td>
+       </tr>
+       <% }) %>
+    </table>
+    <% } else { %>
+        <h2>No product found as <%= searchTerm %></h2>
+        <form action="/items" method="POST">
+    <input name="product" placeholder="Product" value="<%= searchTerm %>" required />
+    <input name="price" type="number" placeholder="Price" required />
+    <input name="quantity" type="number" placeholder="Quantity" required />
+    <!-- <input name="unit" type="dropdown" placeholder="Unit" required /> -->
+    <select name="unit" required>Unit
+      <option value="kg">kg</option>
+      <option value="g">g</option>
+      <option value="litre">litre</option>
+      <option value="ml">ml</option>
+      <option value="pcs">pcs</option>
+    </select>
+    <button type="submit">Add</button>
+    </form>
+    <% } %>
+    <!-- <button><a href="/items/<%= item._id %>/edit">Edit</a></button> -->
+    <a href="/" method="GET" style="display:inline;"><button type="submit">Back</button></a>
+    </section>
+</body>
+</html>

@@ -1,0 +1,98 @@
+/* Global styles */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f6f9;
+  margin: 0;
+  padding: 20px;
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 30px;
+}
+
+h3 {
+  margin-top: 40px;
+  color: #2c3e50;
+}
+
+/* Table styles */
+table {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 30px auto;
+  border-collapse: collapse;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  background-color: #fff;
+}
+
+th, td {
+  padding: 12px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+
+th {
+  background-color: #2e86de;
+  color: white;
+}
+
+/* Form styles */
+form {
+  text-align: center;
+  margin: 10px 0;
+}
+
+input[type="email"] {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  width: 250px;
+  max-width: 90%;
+  margin-right: 10px;
+}
+
+button {
+  padding: 10px 15px;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  background-color: #2e86de;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #1b4f72;
+}
+
+a button {
+  margin: 5px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  table {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  input[type="email"] {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  form {
+    display: block;
+    text-align: center;
+  }
+
+  button {
+    width: 100%;
+    margin: 5px 0;
+  }
+}
