@@ -1,4 +1,4 @@
-Here's the updated description including the PDF export and email functionality:
+
 
 ---
 
